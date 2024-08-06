@@ -11,7 +11,7 @@ Możemy napisać każdy problem na wiele różnych sposobów, ale każdy sposób
 **Najlepiej napisać kod który jest niezwykle szybki i zajmuje bardzo mały pamięci** - ale nie zawsze jest to takie proste, ważne, żeby do tego dążyć.
 
 - [x] Jak opisać czas
-- [ ] Jak opisać przestrzeń
+- [x] Jak opisać przestrzeń
 
 ## Jak opisywać czas, praktyczne opisywanie czasu.
 
@@ -52,3 +52,8 @@ Przestrzeń użycia algorytmu opisujemy w ten sam sposób, każda zmienna zajmuj
 
 Zmienna typu prymitywnego zajmuje O(1).
 Zmienna typu referencyjnego zajmuje O(n).
+
+**Przykład [] & {}**
+
+Big O {} - Dodawanie,Usuwanie,Dostęp O(1), wyszukiwanie O(n)
+Big o [] - Dodawanie (Zależy czy shift/unshift), Usuwanie(Zależy czy shift/unshift),Dostęp O(1), Wyszukiwanie O(n)
