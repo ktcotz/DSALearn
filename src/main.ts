@@ -1,1 +1,1 @@
-console.log("hi");
+import "./problem-solving-patterns/problem-solving-patterns";
