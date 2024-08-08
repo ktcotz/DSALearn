@@ -13,3 +13,7 @@ Strategie rozwiazania niektórych problemów w programowaniu. Opiszę tutaj kilk
 
 Najczęściej używa się w nim obiektu,mapy która gromadzi jakieś wartości.
 Często dzięki temu algorytmowi jesteśmy w stanie uzyskać O(n) działając na tablicach i stringach.
+
+## Multi Pointers
+
+Pozwala stworzyć kilka pointerów na iterowalnej strukturze i poruszać się w niej po różnych kierunkach.

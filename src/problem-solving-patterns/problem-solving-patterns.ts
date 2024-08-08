@@ -54,6 +54,30 @@ function validAnagram(firstWord: string, potentialyAnagram: string) {
     MULTIPLE POINTERS PATTERN
 */
 
+// Wejście - tablica liczb posortowanych.
+// O(n) time complexity, 0(1) space complexity.
+// Zadanie : Policzyć unikalne wartości w tablicy.
+
+function countUniqueValues(numbers: number[]) {
+  // Przejście po tablicy za pomocą dwóch pointerów.
+  // Sprawdzanie wartości pod pointerami, jeżeli te same to pointer drugi idzie dalej.
+  // Jeżeli nie to ustawia na pierwszym pointerze + 1 tą wartość,
+  // Na końcu zwraca pointer pierwszy jako counter.
+
+  let left = 0;
+  let right = 1;
+
+  while (right <= numbers.length) {
+    if (numbers[left] !== numbers[right]) {
+      numbers[++left] = numbers[right];
+    }
+
+    right++;
+  }
+
+  return left;
+}
+
 /*
     SLIDING WINDOW PATTERN
 */
