@@ -49,6 +49,75 @@ function validAnagram(firstWord: string, potentialyAnagram: string) {
 
   return true;
 }
+// Wejście - Dwie pozytywne liczby.
+// O(n) time complexity.
+// Zadanie : Czy liczby podane mają taką samą ilość poszczególnych liczb w sobie.
+
+const calculateNumbersFrequency = (numbersToCalculate: number) => {
+  const frequency: Record<number, number> = {};
+
+  while (numbersToCalculate) {
+    const lastNumber = Math.floor(numbersToCalculate % 10);
+
+    const isNumberInFrequency = frequency[lastNumber];
+
+    if (isNumberInFrequency) {
+      frequency[lastNumber]++;
+    } else {
+      frequency[lastNumber] = 1;
+    }
+
+    numbersToCalculate = Math.floor(numbersToCalculate / 10);
+  }
+
+  return frequency;
+};
+
+function sameFrequency(firstNumber: number, secondNumber: number) {
+  // Obliczyć ilość poszczególnych liczb i zapisać je do obiektu.
+  const firstNumberFrequency = calculateNumbersFrequency(firstNumber);
+  const secondNumberFrequency = calculateNumbersFrequency(secondNumber);
+
+  for (const key in firstNumberFrequency) {
+    if (firstNumberFrequency[key] !== secondNumberFrequency[key]) return false;
+  }
+
+  return true;
+  // Sprawdzić ilość poszczególnych liczb.
+}
+
+sameFrequency(182, 281); // true
+sameFrequency(34, 14); // false
+sameFrequency(3589578, 5879385); // true
+sameFrequency(22, 222); // false
+
+// Wejście - zmienna liczba argumentów różnego typu.
+// O(n) & O(n), Bonus (O n log n) O(1)
+// Zadanie : Sprawdź czy w podanych liczbach argumentów są duplikaty.
+
+function areThereDuplicates<T extends string | number | boolean>(
+  ...values: T[]
+) {
+  const frequency: Record<T, number> = {};
+
+  for (let i = 0; i < values.length; i++) {
+    const value = values[i];
+
+    frequency[value] ? frequency[value]++ : (frequency[value] = 1);
+  }
+
+  for (const key in frequency) {
+    const potentialDuplicate = frequency[key];
+
+    if (potentialDuplicate > 1) return true;
+  }
+
+  return false;
+}
+
+areThereDuplicates(1, 2, 3); // false
+areThereDuplicates(1, 2, 2); // true
+areThereDuplicates("a", "b", "c", "a"); // true
 
 /*
     MULTIPLE POINTERS PATTERN
@@ -77,6 +146,49 @@ function countUniqueValues(numbers: number[]) {
 
   return left;
 }
+
+// Wejście : posortowane liczby, target.
+// O(n) & O(1).
+// Zadanie : Znaleźć czy dwie liczby w tablicy dodane do siebie są równe target.
+
+function averagePair(numbers: number[], target: number) {
+  // Pętla po tablicy
+  let start = 0;
+  let end = numbers.length - 1;
+
+  while (start <= end) {
+    const averageSum = (numbers[start] + numbers[end]) / 2;
+
+    if (averageSum === target) return true;
+    if (averageSum < target) start++;
+    if (averageSum > target) end--;
+  }
+
+  return false;
+}
+
+averagePair([1, 2, 3], 2.5); // true
+averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8); // true
+averagePair([-1, 0, 3, 4, 5, 6], 4.1); // false
+averagePair([], 4); // false
+
+// Wejście : Dwa stringi
+// Zadanie : Sprawdzić czy pierwszy ciąg jest w jakiś sposób podciągiem drugiego ciągu, bez zmieniania jego kolejności.
+// O(n+m) & O(1).
+
+function isSubsequence(firstWord: string, secondWord: string) {
+  let j = 0;
+  for (let i = 0; i < secondWord.length; i++) {
+    if (secondWord[i] === firstWord[j]) j++;
+  }
+
+  return j === firstWord.length;
+}
+
+isSubsequence("hello", "hello world"); // true
+isSubsequence("sing", "sting"); // true
+isSubsequence("abc", "abracadabra"); // true
+isSubsequence("abc", "acb"); // false (order matters)
 
 /*
     SLIDING WINDOW PATTERN

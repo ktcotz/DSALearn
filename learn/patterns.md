@@ -17,3 +17,10 @@ Często dzięki temu algorytmowi jesteśmy w stanie uzyskać O(n) działając na
 ## Multi Pointers
 
 Pozwala stworzyć kilka pointerów na iterowalnej strukturze i poruszać się w niej po różnych kierunkach.
+
+## Sliding Window
+
+Pozwala stworzyć coś na wzór okna, które możemy rozszerzać zmniejszać wedle uznania aby uzyskać jakiś konkretny wynik, najdłuższy podciąg w znaku,
+najdłuższa suma 3 liczb z rzędu.
+
+Okno działa na pewnym warunku dla którego się rozszerza albo zmniejsza.
