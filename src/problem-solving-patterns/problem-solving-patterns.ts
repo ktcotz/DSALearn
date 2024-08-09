@@ -194,6 +194,35 @@ isSubsequence("abc", "acb"); // false (order matters)
     SLIDING WINDOW PATTERN
 */
 
+// Wejście : Tablica liczb, target.
+// Zadanie : Maksymalna suma liczb długości target.
+// O(n) & O(1)
+
+function maxSubarraySum(numbers: number[], target: number) {
+  // Pętla po tablicy.
+  if (numbers.length < target) return null;
+  // Rozszerzanie okna.
+  let sum = -Infinity;
+  let tempSum = 0;
+
+  for (let i = 0, j = 0; i < numbers.length; i++) {
+    tempSum += numbers[i];
+
+    if (target === i - j + 1) {
+      sum = Math.max(sum, tempSum);
+      tempSum -= numbers[j];
+      j++;
+    }
+  }
+
+}
+
+maxSubarraySum([100, 200, 300, 400], 2); // 700
+maxSubarraySum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4); // 39
+maxSubarraySum([-3, 4, 0, -2, 6, -1], 2); // 5
+maxSubarraySum([3, -2, 7, -4, 1, -1, 4, -2, 1], 2); // 5
+maxSubarraySum([2, 3], 3); // null
+
 /*
     DIVIDE AND CONQUER PATTERN
 */
