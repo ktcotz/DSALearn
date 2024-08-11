@@ -24,3 +24,7 @@ Pozwala stworzyć coś na wzór okna, które możemy rozszerzać zmniejszać wed
 najdłuższa suma 3 liczb z rzędu.
 
 Okno działa na pewnym warunku dla którego się rozszerza albo zmniejsza.
+
+## Divide and conquer
+
+Dzielenie na mniejsze i działanie na mniejszych zestawach danych.

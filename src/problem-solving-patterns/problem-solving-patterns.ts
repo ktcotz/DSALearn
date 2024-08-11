@@ -281,3 +281,21 @@ findLongestSubstring("thisishowwedoit"); // 6
 /*
     DIVIDE AND CONQUER PATTERN
 */
+
+const binarySearch = (numbers: number[], find: number) => {
+  let start = 0;
+  let end = numbers.length - 1;
+
+  while (start <= end) {
+    let idx = Math.floor((start + end) / 2);
+    let mid = numbers[idx];
+
+    if (mid === find) return idx;
+    if (mid > find) end = idx - 1;
+    if (mid < find) start = idx + 1;
+  }
+
+  return -1;
+};
+
+binarySearch([1, 2, 3, 4, 5, 6], 4);
