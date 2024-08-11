@@ -214,7 +214,6 @@ function maxSubarraySum(numbers: number[], target: number) {
       j++;
     }
   }
-
 }
 
 maxSubarraySum([100, 200, 300, 400], 2); // 700
@@ -222,6 +221,62 @@ maxSubarraySum([1, 4, 2, 10, 23, 3, 1, 0, 20], 4); // 39
 maxSubarraySum([-3, 4, 0, -2, 6, -1], 2); // 5
 maxSubarraySum([3, -2, 7, -4, 1, -1, 4, -2, 1], 2); // 5
 maxSubarraySum([2, 3], 3); // null
+
+// Wejście : tablica liczb pozytywnych, target.
+// O(n) & O(1)
+// Zadanie : Minimalna długość tablicy która jest równa targetowi, liczby muszą być obok siebie, w przeciwnym wypadku zwróc 0.
+
+function minSubArrayLen(numbers: number[], target: number) {
+  let minLength = Infinity;
+  let tempSum = 0;
+  for (let i = 0, j = 0; i < numbers.length; i++) {
+    tempSum += numbers[i];
+    while (tempSum >= target) {
+      minLength = Math.min(minLength, i - j + 1);
+      tempSum -= numbers[j];
+      j++;
+    }
+  }
+
+  return minLength === Infinity ? 0 : minLength;
+}
+
+minSubArrayLen([2, 3, 1, 2, 4, 3], 7); // 2 -> because [4,3] is the smallest subarray
+minSubArrayLen([2, 1, 6, 5, 4], 9); // 2 -> because [5,4] is the smallest subarray
+minSubArrayLen([3, 1, 7, 11, 2, 9, 8, 21, 62, 33, 19], 52); // 1 -> because [62] is greater than 52
+minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 39); // 3
+minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 55); // 5
+minSubArrayLen([4, 3, 3, 8, 1, 2, 3], 11); // 2
+minSubArrayLen([1, 4, 16, 22, 5, 7, 8, 9, 10], 95); // 0
+
+// Wejście - string.
+// O(n) complexity time.
+// Zadanie : Zwróć najdłuższy podciąg znaków w którym wszystkie znaki są inne.
+
+function findLongestSubstring(str) {
+  let longest = 0;
+  let seen = {};
+  let start = 0;
+
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i];
+    if (seen[char]) {
+      start = Math.max(start, seen[char]);
+    }
+    // index - beginning of substring + 1 (to include current in count)
+    longest = Math.max(longest, i - start + 1);
+    // store the index of the next char so as to not double count
+    seen[char] = i + 1;
+  }
+  return longest;
+}
+findLongestSubstring(""); // 0
+findLongestSubstring("rithmschool"); // 7
+findLongestSubstring("thisisawesome"); // 6
+findLongestSubstring("thecatinthehat"); // 7
+findLongestSubstring("bbbbbb"); // 1
+findLongestSubstring("longestsubstring"); // 8
+findLongestSubstring("thisishowwedoit"); // 6
 
 /*
     DIVIDE AND CONQUER PATTERN
