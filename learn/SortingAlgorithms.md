@@ -5,7 +5,8 @@ Przestawienie jakieś kolekcji w taki sposób aby itemy spełniały nasze wymaga
 **Sortowanie od największej do najmniejszej**
 **Sortowanie po ilości zjedzonego jedzenia**
 
-- [] Bubble Sort
+- [x] Bubble Sort
+- [] Selection Sort
 
 ## Bubble Sort
 
@@ -18,3 +19,9 @@ Pomysłami optymalizacyjnymi są:
 
 - Pętla kończąca się na i-1 elemencie, ostatni element jest już posortowany.
 - No Swaps syntax, który zamienia elementy które nie zostały zamienione.
+
+## Selection Sort
+
+Selection Sort - układanie najmniejszych elementów na początku tablicy i zamienianie z aktualnie porównywanym elementem.
+
+Zazwyczaj działa w złożoności O(n).

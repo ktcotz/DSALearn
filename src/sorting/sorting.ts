@@ -12,7 +12,27 @@ const bubbleSort = (numbers: number[]) => {
     if (noSwaps) break;
   }
 
-  console.log(numbers);
+  return numbers;
 };
 
 bubbleSort([29, 10, 14, 37, 15]);
+
+const selectionSort = (numbers: number[]) => {
+  for (let i = 0; i < numbers.length; i++) {
+    let min = i;
+
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[j] < numbers[min]) {
+        min = j;
+      }
+    }
+
+    if (min !== i) {
+      [numbers[i], numbers[min]] = [numbers[min], numbers[i]];
+    }
+  }
+
+  console.log(numbers);
+};
+
+selectionSort([29, 10, 14, 37, 15]);
