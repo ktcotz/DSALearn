@@ -1,1 +1,1 @@
-import "./searching/searching";
+import "./sorting/sorting";
