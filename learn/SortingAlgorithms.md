@@ -14,7 +14,7 @@ Przestawienie jakieś kolekcji w taki sposób aby itemy spełniały nasze wymaga
 Sortowanie Bąbelkowe - większa liczba "bąbelkuje" wyżej.
 Przechodzi po tablicy elementów i zamienia elementy aż największa liczba nie znajdzie się na ostatnim miejscu.
 
-Działający w złożoności O(n).
+Działający w złożoności O(n^2).
 
 Pomysłami optymalizacyjnymi są:
 
@@ -25,10 +25,10 @@ Pomysłami optymalizacyjnymi są:
 
 Selection Sort - układanie najmniejszych elementów na początku tablicy i zamienianie z aktualnie porównywanym elementem.
 
-Zazwyczaj działa w złożoności O(n).
+Zazwyczaj działa w złożoności O(n^2).
 
 ## Insertion Sort
 
 Insertion Sort - wstawia dokładnie elemnent w dokładne miejsce w którym powinno być.
 
-Zazwyczaj działa w złożoności O(n).
+Zazwyczaj działa w złożoności O(n^2).
