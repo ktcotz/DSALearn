@@ -32,7 +32,23 @@ const selectionSort = (numbers: number[]) => {
     }
   }
 
-  console.log(numbers);
+  return numbers;
 };
 
 selectionSort([29, 10, 14, 37, 15]);
+
+const insertionSort = (numbers: number[]) => {
+  for (let i = 1; i < numbers.length; i++) {
+    let currentVal = numbers[i];
+
+    for (var j = i - 1; j >= 0 && numbers[j] > currentVal; j--) {
+      numbers[j + 1] = numbers[j];
+    }
+
+    numbers[j + 1] = currentVal;
+  }
+
+  return numbers;
+};
+
+insertionSort([29, 10, 14, 37, 15]);

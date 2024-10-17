@@ -6,7 +6,8 @@ Przestawienie jakieś kolekcji w taki sposób aby itemy spełniały nasze wymaga
 **Sortowanie po ilości zjedzonego jedzenia**
 
 - [x] Bubble Sort
-- [] Selection Sort
+- [x] Selection Sort
+- [x] Insertion Sort
 
 ## Bubble Sort
 
@@ -23,5 +24,11 @@ Pomysłami optymalizacyjnymi są:
 ## Selection Sort
 
 Selection Sort - układanie najmniejszych elementów na początku tablicy i zamienianie z aktualnie porównywanym elementem.
+
+Zazwyczaj działa w złożoności O(n).
+
+## Insertion Sort
+
+Insertion Sort - wstawia dokładnie elemnent w dokładne miejsce w którym powinno być.
 
 Zazwyczaj działa w złożoności O(n).
