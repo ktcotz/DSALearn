@@ -9,6 +9,12 @@ Przestawienie jakieś kolekcji w taki sposób aby itemy spełniały nasze wymaga
 - [x] Selection Sort
 - [x] Insertion Sort
 
+## Bardziej szalone algorytmy sortowania
+
+- [x] Merge Sort
+- [] Quick Sort
+- [] Radix Sort
+
 ## Bubble Sort
 
 Sortowanie Bąbelkowe - większa liczba "bąbelkuje" wyżej.
@@ -32,3 +38,7 @@ Zazwyczaj działa w złożoności O(n^2).
 Insertion Sort - wstawia dokładnie elemnent w dokładne miejsce w którym powinno być.
 
 Zazwyczaj działa w złożoności O(n^2).
+
+## Merge Sort
+
+Merge Sort - działa głównie na rekurencji która rozszerza główną tablicę na wiele małych podtablic i nastepnie je łączy w całą spójną posortowaną tablicę.
