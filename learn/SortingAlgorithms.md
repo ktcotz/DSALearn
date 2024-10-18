@@ -42,3 +42,5 @@ Zazwyczaj działa w złożoności O(n^2).
 ## Merge Sort
 
 Merge Sort - działa głównie na rekurencji która rozszerza główną tablicę na wiele małych podtablic i nastepnie je łączy w całą spójną posortowaną tablicę.
+
+Merge Sort zazwyczaj działa na złożoności O(nlogn)

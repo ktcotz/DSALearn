@@ -53,6 +53,42 @@ const insertionSort = (numbers: number[]) => {
 
 insertionSort([29, 10, 14, 37, 15]);
 
-const mergeSort = (numbers: number[]) => {};
+const mergeSort = (numbers: number[]) => {
+  const merge = (firstArray: number[], secondArray: number[]) => {
+    const sortedArray: number[] = [];
+    let left = 0;
+    let right = 0;
 
-mergeSort([29, 10, 14, 37, 15]);
+    while (left < firstArray.length && right < secondArray.length) {
+      if (firstArray[left] > secondArray[right]) {
+        sortedArray.push(secondArray[right]);
+        right++;
+      } else {
+        sortedArray.push(firstArray[left]);
+        left++;
+      }
+    }
+
+    while (left < firstArray.length) {
+      sortedArray.push(firstArray[left]);
+      left++;
+    }
+
+    while (right < secondArray.length) {
+      sortedArray.push(secondArray[right]);
+      right++;
+    }
+
+    return sortedArray;
+  };
+
+  if (numbers.length <= 1) return numbers;
+
+  let mid = Math.floor(numbers.length / 2);
+  let left = mergeSort(numbers.slice(0, mid));
+  let right = mergeSort(numbers.slice(mid));
+
+  return merge(left, right);
+};
+
+console.log(mergeSort([29, 10, 14, 37, 15]));
