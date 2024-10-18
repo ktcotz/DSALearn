@@ -91,4 +91,4 @@ const mergeSort = (numbers: number[]) => {
   return merge(left, right);
 };
 
-console.log(mergeSort([29, 10, 14, 37, 15]));
+mergeSort([29, 10, 14, 37, 15]);
