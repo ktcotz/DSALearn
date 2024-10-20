@@ -12,7 +12,7 @@ Przestawienie jakieś kolekcji w taki sposób aby itemy spełniały nasze wymaga
 ## Bardziej szalone algorytmy sortowania
 
 - [x] Merge Sort
-- [] Quick Sort
+- [x] Quick Sort
 - [] Radix Sort
 
 ## Bubble Sort
@@ -44,3 +44,5 @@ Zazwyczaj działa w złożoności O(n^2).
 Merge Sort - działa głównie na rekurencji która rozszerza główną tablicę na wiele małych podtablic i nastepnie je łączy w całą spójną posortowaną tablicę.
 
 Merge Sort zazwyczaj działa na złożoności O(nlogn)
+
+## Quick Sort

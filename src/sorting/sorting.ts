@@ -92,3 +92,7 @@ const mergeSort = (numbers: number[]) => {
 };
 
 mergeSort([29, 10, 14, 37, 15]);
+
+const quickSort = (numbers: number[]) => {};
+
+quickSort([29, 10, 14, 37, 15]);
