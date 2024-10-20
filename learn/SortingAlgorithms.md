@@ -46,3 +46,6 @@ Merge Sort - działa głównie na rekurencji która rozszerza główną tablicę
 Merge Sort zazwyczaj działa na złożoności O(nlogn)
 
 ## Quick Sort
+
+Quick Sort - działa na zasadzie pivota, który określa zależność gdzie z lewej strony układamy liczby mniejsze od niego a z prawej większe.
+Działa to na zasadzie rekurencji.

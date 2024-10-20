@@ -93,6 +93,30 @@ const mergeSort = (numbers: number[]) => {
 
 mergeSort([29, 10, 14, 37, 15]);
 
-const quickSort = (numbers: number[]) => {};
+const pivot = (numbers: number[], start = 0, end = numbers.length - 1) => {
+  const pivotNumber = numbers[start];
+  let index = 0;
+
+  for (let i = start + 1; i < end; i++) {
+    if (numbers[i] < pivotNumber) {
+      index++;
+      [numbers[i], numbers[index]] = [numbers[index], numbers[i]];
+    }
+  }
+
+  [numbers[start], numbers[index]] = [numbers[index], numbers[start]];
+  return index;
+};
+
+const quickSort = (numbers: number[], left = 0, right = numbers.length - 1) => {
+  if (left < right) {
+    let pivotIndex = pivot(numbers, left, right);
+
+    quickSort(numbers, left, pivotIndex - 1);
+    quickSort(numbers, pivotIndex + 1, right);
+  }
+
+  return numbers;
+};
 
 quickSort([29, 10, 14, 37, 15]);
