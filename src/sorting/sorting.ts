@@ -119,4 +119,37 @@ const quickSort = (numbers: number[], left = 0, right = numbers.length - 1) => {
   return numbers;
 };
 
-quickSort([29, 10, 14, 37, 15]);
+const getDigit = (num: number, digit: number) => {
+  return Math.floor(Math.abs(num) / Math.pow(10, digit)) % 10;
+};
+
+const digitCount = (num: number) => {
+  if (num === 0) return 1;
+  return Math.floor(Math.log10(Math.abs(num))) + 1;
+};
+
+const mostDigits = (nums: number[]) => {
+  let maxDigits = 0;
+  for (let i = 0; i < nums.length; i++) {
+    maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+  }
+  return maxDigits;
+};
+
+function radixSort(arrOfNums: number[]) {
+  let maxDigitCount = mostDigits(arrOfNums);
+  for (let k = 0; k < maxDigitCount; k++) {
+    let digitBuckets = Array.from({ length: 10 }, () => []); // [[], [], [],...]
+    for (let i = 0; i < arrOfNums.length; i++) {
+      let digit = getDigit(arrOfNums[i], k);
+      digitBuckets[digit].push(arrOfNums[i]);
+    }
+    // New order after each loop
+    arrOfNums = [].concat(...digitBuckets);
+  }
+
+  console.log(arrOfNums);
+  return arrOfNums;
+}
+
+radixSort([29, 10, 14, 37, 15, 100]);

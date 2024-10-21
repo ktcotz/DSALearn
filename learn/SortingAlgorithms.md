@@ -49,3 +49,13 @@ Merge Sort zazwyczaj działa na złożoności O(nlogn)
 
 Quick Sort - działa na zasadzie pivota, który określa zależność gdzie z lewej strony układamy liczby mniejsze od niego a z prawej większe.
 Działa to na zasadzie rekurencji.
+
+## Radix Sort
+
+Radix Sort - specjalny rodzaj algorytmu sortującego który działa na tablicach typu liczbowego.
+
+Różni się on od standardowych algorytmów tym, że nie porównuje ze sobą dwóch liczb.
+
+Dodaje on konkretne liczby do bucketów które są ponumerowane od 0-9 i zważywszy na kolejność liczb dodaje oraz wyciąga je w coraz to bardziej odpowiedniej formie.
+
+Radix Sort zazwyczaj działa na złożoności O(nk)
