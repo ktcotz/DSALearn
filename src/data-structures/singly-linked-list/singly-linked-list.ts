@@ -85,4 +85,24 @@ export class SinglyLinkedList<T> {
 
     return removed;
   }
+
+  /**
+   * Add element at beginning of list.
+   * @param value
+   */
+
+  unshift(value: T) {
+    const newHead = new SinglyLinkedListNode(value);
+
+    if (!this.head) {
+      this.head = newHead;
+      this.tail = newHead;
+    } else {
+      newHead.next = this.head;
+      this.head = newHead;
+    }
+
+    this.length++;
+    return newHead;
+  }
 }
