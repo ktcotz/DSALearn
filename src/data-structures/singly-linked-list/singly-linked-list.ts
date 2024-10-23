@@ -32,4 +32,36 @@ export class SinglyLinkedList<T> {
 
     return this;
   }
+
+  /**
+   * Remove element from end of list.
+   */
+
+  pop() {
+    if (!this.head || !this.tail) return null;
+
+    let removed = this.tail;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      let current = this.head;
+      let prev = null;
+
+      while (current.next) {
+        prev = current;
+        current = current.next;
+      }
+
+      this.tail = prev;
+
+      if (this.tail) {
+        this.tail.next = null;
+      }
+    }
+
+    this.length--;
+    return removed;
+  }
 }
