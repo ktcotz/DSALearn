@@ -64,4 +64,25 @@ export class SinglyLinkedList<T> {
     this.length--;
     return removed;
   }
+
+  /**
+   * Remove element from beginning of list.
+   */
+
+  shift() {
+    if (!this.head || !this.tail) return null;
+
+    let removed = this.head;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = this.head.next;
+    }
+
+    this.length--;
+
+    return removed;
+  }
 }

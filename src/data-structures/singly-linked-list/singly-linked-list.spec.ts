@@ -96,4 +96,33 @@ describe("Singly Linked List structure method tests", () => {
     expect(sll.head).toBeNull();
     expect(sll.tail).toBeNull();
   });
+
+  test("Shift method - should return null when head or tail is null", () => {
+    const sll = new SinglyLinkedList();
+
+    expect(sll.shift()).toBeNull();
+  });
+
+  test("Shift method - should return removed item when head or tail is a node", () => {
+    const sll = new SinglyLinkedList();
+
+    const FIRST_CREATED_NODE_VALUE = 35;
+    const SECOND_CREATED_NODE_VALUE = 55;
+
+    sll.push(FIRST_CREATED_NODE_VALUE);
+    sll.push(SECOND_CREATED_NODE_VALUE);
+
+    expect(sll.shift()).toEqual(
+      new SinglyLinkedListNode(
+        FIRST_CREATED_NODE_VALUE,
+        new SinglyLinkedListNode(SECOND_CREATED_NODE_VALUE)
+      )
+    );
+
+    expect(sll.length).toBe(1);
+
+    expect(sll.shift()).toEqual(
+      new SinglyLinkedListNode(SECOND_CREATED_NODE_VALUE)
+    );
+  });
 });
