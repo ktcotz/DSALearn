@@ -105,4 +105,25 @@ export class SinglyLinkedList<T> {
     this.length++;
     return newHead;
   }
+
+  /**
+   * Get node from giver parameter index.
+   */
+  get(index: number) {
+    if (index < 0 || index >= this.length) return null;
+    if (!this.head) return null;
+
+    let tempIndex = 0;
+
+    let current = this.head;
+
+    while (tempIndex !== index) {
+      tempIndex++;
+      if (current.next) {
+        current = current.next;
+      }
+    }
+
+    return current;
+  }
 }
