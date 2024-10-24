@@ -165,7 +165,28 @@ export class SinglyLinkedList<T> {
     previousItem.next = newNode;
 
     this.length++;
-    
+
     return newNode;
+  }
+
+  /**
+   * Remove node on specific index.
+   * @param index
+   */
+
+  remove(index: number) {
+    if (index < 0 || index > this.length) return null;
+
+    if (index === 0) return this.shift();
+    if (index === this.length) return this.pop();
+
+    let previousNode = this.get(index - 1);
+    let current = this.get(index);
+
+    if (!previousNode || !current) return null;
+
+    previousNode.next = current.next;
+    this.length--;
+    return current;
   }
 }
