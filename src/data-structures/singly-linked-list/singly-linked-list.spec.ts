@@ -218,4 +218,61 @@ describe("Singly Linked List structure method tests", () => {
       new SinglyLinkedListNode(VALUE_TO_SET)
     );
   });
+
+  test("Insert method - return null when index is lower than 0 or higher than list", () => {
+    const sll = new SinglyLinkedList();
+
+    const NODE_VALUE_TO_INSERT = 35;
+
+    expect(sll.insert(NODE_VALUE_TO_INSERT, -1)).toBeNull();
+    expect(sll.insert(NODE_VALUE_TO_INSERT, 1)).toBeNull();
+  });
+
+  test("Insert method - add to head and tail when index is 0", () => {
+    const sll = new SinglyLinkedList();
+
+    const NODE_VALUE_TO_INSERT = 35;
+
+    sll.insert(NODE_VALUE_TO_INSERT, 0);
+
+    expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+  });
+
+  test("Insert method - add to  tail when index is equal length of list", () => {
+    const sll = new SinglyLinkedList();
+
+    const NODE_VALUE_TO_INSERT = 35;
+    const LAST_NODE_VALUE_TO_INSERT = 100;
+
+    sll.insert(NODE_VALUE_TO_INSERT, 0);
+
+    expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+
+    sll.insert(LAST_NODE_VALUE_TO_INSERT, sll.length);
+
+    expect(sll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
+  });
+
+  test("Insert method - add correctly on correct index", () => {
+    const sll = new SinglyLinkedList();
+
+    const NODE_VALUE_TO_INSERT = 35;
+    const LAST_NODE_VALUE_TO_INSERT = 100;
+    const MIDDLE_NODE_VALUE_TO_INSERT = 55;
+
+    sll.insert(NODE_VALUE_TO_INSERT, 0);
+
+    expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+
+    sll.insert(LAST_NODE_VALUE_TO_INSERT, sll.length);
+
+    expect(sll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
+
+    sll.insert(MIDDLE_NODE_VALUE_TO_INSERT, 1);
+
+    expect(sll.get(1)?.value).toBe(MIDDLE_NODE_VALUE_TO_INSERT);
+  });
 });

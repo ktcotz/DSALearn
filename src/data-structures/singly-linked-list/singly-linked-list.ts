@@ -142,4 +142,30 @@ export class SinglyLinkedList<T> {
 
     return node;
   }
+
+  /**
+   * Insert node on specific index.
+   * @param value
+   * @param index
+   */
+
+  insert(value: T, index: number) {
+    if (index < 0 || index > this.length) return null;
+
+    if (index === 0) return this.unshift(value);
+    if (index === this.length) return this.push(value);
+
+    const newNode = new SinglyLinkedListNode(value);
+
+    let previousItem = this.get(index - 1);
+
+    if (!previousItem) return null;
+
+    newNode.next = previousItem.next;
+    previousItem.next = newNode;
+
+    this.length++;
+    
+    return newNode;
+  }
 }
