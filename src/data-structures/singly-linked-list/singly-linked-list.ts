@@ -108,6 +108,7 @@ export class SinglyLinkedList<T> {
 
   /**
    * Get node from giver parameter index.
+   * @param index
    */
   get(index: number) {
     if (index < 0 || index >= this.length) return null;
@@ -125,5 +126,20 @@ export class SinglyLinkedList<T> {
     }
 
     return current;
+  }
+
+  /**
+   * Set value to the node with correct index.
+   * @param index
+   * @param value
+   */
+  set(value: T, index: number) {
+    const node = this.get(index);
+
+    if (!node) return null;
+
+    node.value = value;
+
+    return node;
   }
 }
