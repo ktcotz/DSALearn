@@ -5,5 +5,20 @@
 */
 
 export function strStr(haystack: string, needle: string): number {
-  return haystack.indexOf(needle);
+  for (let i = 0; i < haystack.length; i++) {
+    let isEqual = true;
+
+    for (let j = 0; j < needle.length; j++) {
+      if (haystack[i + j] !== needle[j]) {
+        isEqual = false;
+        break;
+      }
+    }
+
+    if (isEqual) {
+      return i;
+    }
+  }
+
+  return -1;
 }
