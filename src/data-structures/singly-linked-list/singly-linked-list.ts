@@ -189,4 +189,38 @@ export class SinglyLinkedList<T> {
     this.length--;
     return current;
   }
+
+  print() {
+    const arr = [];
+
+    let current = this.head;
+
+    if (!current) return null;
+
+    while (current) {
+      arr.push(current.value);
+      current = current?.next;
+    }
+
+    console.log(arr);
+    console.log(this);
+  }
+
+  reverse() {
+    let node = this.head;
+    this.head = this.tail;
+    this.tail = node;
+
+    let prev = null;
+    let next = null;
+
+    while (node) {
+      next = node.next;
+      node.next = prev;
+      prev = node;
+      node = next;
+    }
+
+    return this;
+  }
 }
