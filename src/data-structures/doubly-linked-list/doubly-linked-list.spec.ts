@@ -1,5 +1,5 @@
 import { describe, expect, test } from "vitest";
-import { DoublyLinkedList } from "./doubly-linked-list";
+import { DoublyLinkedList, DoublyLinkedListNode } from "./doubly-linked-list";
 
 describe("Doubly Linked List structure method tests", () => {
   test("Should initially have head and tail setup to null, length should be 0", () => {
@@ -57,31 +57,35 @@ describe("Doubly Linked List structure method tests", () => {
     expect(sll.push(FIRST_CREATED_NODE_VALUE)).toEqual(sll);
   });
 
-  //   test("Pop method - should return null when head or tail is null", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Pop method - should return null when head or tail is null", () => {
+    const sll = new DoublyLinkedList();
 
-  //     expect(sll.pop()).toBeNull();
-  //   });
+    expect(sll.pop()).toBeNull();
+  });
 
-  //   test("Pop method - should return removed item when head or tail is a node", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Pop method - should return removed item when head or tail is a node", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const FIRST_CREATED_NODE_VALUE = 35;
-  //     const SECOND_CREATED_NODE_VALUE = 55;
+    const FIRST_CREATED_NODE_VALUE = 35;
+    const SECOND_CREATED_NODE_VALUE = 55;
 
-  //     sll.push(FIRST_CREATED_NODE_VALUE);
-  //     sll.push(SECOND_CREATED_NODE_VALUE);
+    dll.push(FIRST_CREATED_NODE_VALUE);
+    dll.push(SECOND_CREATED_NODE_VALUE);
 
-  //     expect(sll.pop()).toEqual(
-  //       new SinglyLinkedListNode(SECOND_CREATED_NODE_VALUE)
-  //     );
+    expect(dll.pop()).toEqual(
+      new DoublyLinkedListNode(
+        SECOND_CREATED_NODE_VALUE,
+        null,
+        new DoublyLinkedListNode(FIRST_CREATED_NODE_VALUE)
+      )
+    );
 
-  //     expect(sll.length).toBe(1);
+    expect(dll.length).toBe(1);
 
-  //     expect(sll.pop()).toEqual(
-  //       new SinglyLinkedListNode(FIRST_CREATED_NODE_VALUE)
-  //     );
-  //   });
+    expect(dll.pop()).toEqual(
+      new DoublyLinkedListNode(FIRST_CREATED_NODE_VALUE)
+    );
+  });
 
   //   test("Pop method - head and tail should be null when pop last element", () => {
   //     const sll = new SinglyLinkedList();

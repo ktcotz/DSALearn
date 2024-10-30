@@ -13,6 +13,12 @@ export class DoublyLinkedList<T> {
     public length = 0
   ) {}
 
+  /**
+   * Add node to the end of list.
+   * @param value
+   * @returns list
+   */
+
   push(value: T) {
     const node = new DoublyLinkedListNode(value);
 
@@ -28,5 +34,33 @@ export class DoublyLinkedList<T> {
     this.length++;
 
     return this;
+  }
+
+  /**
+   * Remove element from end of list.
+   * @returns removed tail
+   */
+
+  pop() {
+    if (!this.tail) return null;
+
+    const poppedTail = this.tail;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      const previousElement = this.tail.prev;
+
+      if (!previousElement) return null;
+
+      previousElement.next = null;
+
+      this.tail = previousElement;
+    }
+
+    this.length--;
+
+    return poppedTail;
   }
 }
