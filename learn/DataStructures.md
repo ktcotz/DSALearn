@@ -16,7 +16,8 @@ Przykładowe Data Structures :
 
 Omówione data structures w projekcie :
 
-- [] Singly Linked List
+- [x] Singly Linked List
+- [x] Doubly Linked List
 
 ## Singly Linked List
 
@@ -25,3 +26,7 @@ Czym jest Singly Linked List - jest to lista powiązana w której każdy węzeł
 Czym się różni od tablicy? Tablica posiada indeksy, lista nie posiada indexów.
 
 Jak dostać się do kolejnego elementu w liście? Poprzez odwoływanie się do pointera next w każdym elemencie.
+
+## Doubly Linked List
+
+Czym jest Doubly Linked List - jest to bardzo podobna struktura danych do single linked list, z różnicą dzięki której mamy możliwość odwołania się do poprzedniego node'a.

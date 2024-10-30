@@ -1,10 +1,7 @@
-import { SinglyLinkedList } from "./data-structures/singly-linked-list/singly-linked-list";
+import { DoublyLinkedList } from "./data-structures/doubly-linked-list/doubly-linked-list";
 
-const sll = new SinglyLinkedList();
+const dll = new DoublyLinkedList();
 
-sll.push(35);
-sll.push(500);
+dll.push(35);
 
-sll.print();
-sll.reverse();
-sll.print();
+console.log(dll);
