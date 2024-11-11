@@ -7,4 +7,6 @@ dll.push(55);
 dll.push(65);
 
 dll.pop();
+
+dll.unshift(10);
 console.log(dll);

@@ -133,47 +133,37 @@ describe("Doubly Linked List structure method tests", () => {
     );
   });
 
-  //   test("Unshift method - should add to head and tail when no one", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Unshift method - should add to head and tail when no one", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const FIRST_CREATED_NODE_VALUE = 35;
+    const FIRST_CREATED_NODE_VALUE = 35;
 
-  //     sll.unshift(FIRST_CREATED_NODE_VALUE);
+    dll.unshift(FIRST_CREATED_NODE_VALUE);
 
-  //     expect(sll.length).toBe(1);
-  //     expect(sll.head).toEqual(
-  //       new SinglyLinkedListNode(FIRST_CREATED_NODE_VALUE)
-  //     );
-  //     expect(sll.tail).toEqual(
-  //       new SinglyLinkedListNode(FIRST_CREATED_NODE_VALUE)
-  //     );
-  //   });
+    expect(dll.length).toBe(1);
+    expect(dll.head).toEqual(
+      new DoublyLinkedListNode(FIRST_CREATED_NODE_VALUE)
+    );
+    expect(dll.tail).toEqual(
+      new DoublyLinkedListNode(FIRST_CREATED_NODE_VALUE)
+    );
+  });
 
-  //   test("Unshift method - should replace head when is", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Unshift method - should replace head when is", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const FIRST_CREATED_NODE_VALUE = 35;
-  //     const SECOND_CREATED_NODE_VALUE = 55;
+    const FIRST_CREATED_NODE_VALUE = 35;
 
-  //     sll.unshift(FIRST_CREATED_NODE_VALUE);
+    dll.unshift(FIRST_CREATED_NODE_VALUE);
 
-  //     expect(sll.length).toBe(1);
-  //     expect(sll.head).toEqual(
-  //       new SinglyLinkedListNode(FIRST_CREATED_NODE_VALUE)
-  //     );
-  //     expect(sll.tail).toEqual(
-  //       new SinglyLinkedListNode(FIRST_CREATED_NODE_VALUE)
-  //     );
-
-  //     sll.unshift(SECOND_CREATED_NODE_VALUE);
-
-  //     expect(sll.head).toEqual(
-  //       new SinglyLinkedListNode(
-  //         SECOND_CREATED_NODE_VALUE,
-  //         new SinglyLinkedListNode(FIRST_CREATED_NODE_VALUE)
-  //       )
-  //     );
-  //   });
+    expect(dll.length).toBe(1);
+    expect(dll.head).toEqual(
+      new DoublyLinkedListNode(FIRST_CREATED_NODE_VALUE)
+    );
+    expect(dll.tail).toEqual(
+      new DoublyLinkedListNode(FIRST_CREATED_NODE_VALUE)
+    );
+  });
 
   //   test("Get method - should return null when index is lower than 0 or higher | average than length of list.", () => {
   //     const sll = new SinglyLinkedList();

@@ -86,4 +86,28 @@ export class DoublyLinkedList<T> {
 
     return shiftedHead;
   }
+
+  /**
+   * Add node to start of list.
+   * @param value
+   * @returns list
+   */
+
+  unshift(value: T) {
+    const newNode = new DoublyLinkedListNode(value);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+
+      this.head = newNode;
+    }
+
+    this.length++;
+
+    return this;
+  }
 }
