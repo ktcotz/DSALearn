@@ -191,27 +191,27 @@ describe("Doubly Linked List structure method tests", () => {
     expect(dll.get(2)).toBeNull();
   });
 
-  //   test("Set method - return null when node is not valid", () => {
-  //     const sll = new SinglyLinkedList();
+    test("Set method - return null when node is not valid", () => {
+      const dll = new DoublyLinkedList();
 
-  //     const VALUE_TO_SET = 50;
+      const VALUE_TO_SET = 50;
 
-  //     expect(sll.set(VALUE_TO_SET, 0)).toBeNull();
-  //   });
+      expect(dll.set(VALUE_TO_SET, 0)).toBeNull();
+    });
 
-  //   test("Set method - return changed node when all is correctly", () => {
-  //     const sll = new SinglyLinkedList();
+    test("Set method - return changed node when all is correctly", () => {
+      const dll = new DoublyLinkedList();
 
-  //     const FIRST_CREATED_NODE_VALUE = 35;
+      const FIRST_CREATED_NODE_VALUE = 35;
 
-  //     sll.push(FIRST_CREATED_NODE_VALUE);
+      dll.push(FIRST_CREATED_NODE_VALUE);
 
-  //     const VALUE_TO_SET = 50;
+      const VALUE_TO_SET = 50;
 
-  //     expect(sll.set(VALUE_TO_SET, 0)).toEqual(
-  //       new SinglyLinkedListNode(VALUE_TO_SET)
-  //     );
-  //   });
+      expect(dll.set(VALUE_TO_SET, 0)).toEqual(
+        new DoublyLinkedListNode(VALUE_TO_SET)
+      );
+    });
 
   //   test("Insert method - return null when index is lower than 0 or higher than list", () => {
   //     const sll = new SinglyLinkedList();

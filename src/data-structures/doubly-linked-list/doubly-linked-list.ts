@@ -140,4 +140,14 @@ export class DoublyLinkedList<T> {
       return currentNode;
     }
   }
+
+  set(value: T, index: number) {
+    const node = this.get(index);
+
+    if (!node) return null;
+
+    node.value = value;
+
+    return node;
+  }
 }
