@@ -87,52 +87,51 @@ describe("Doubly Linked List structure method tests", () => {
     );
   });
 
-  //   test("Pop method - head and tail should be null when pop last element", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Pop method - head and tail should be null when pop last element", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const FIRST_CREATED_NODE_VALUE = 35;
+    const FIRST_CREATED_NODE_VALUE = 35;
 
-  //     sll.push(FIRST_CREATED_NODE_VALUE);
+    dll.push(FIRST_CREATED_NODE_VALUE);
 
-  //     expect(sll.length).toBe(1);
+    expect(dll.length).toBe(1);
 
-  //     expect(sll.pop()).toEqual(new SinglyLinkedListNode(35));
+    expect(dll.pop()).toEqual(new DoublyLinkedListNode(35));
+    dll.pop();
 
-  //     sll.pop();
+    expect(dll.length).toBe(0);
+    expect(dll.head).toBeNull();
+    expect(dll.tail).toBeNull();
+  });
 
-  //     expect(sll.length).toBe(0);
-  //     expect(sll.head).toBeNull();
-  //     expect(sll.tail).toBeNull();
-  //   });
+  test("Shift method - should return null when head or tail is null", () => {
+    const dll = new DoublyLinkedList();
 
-  //   test("Shift method - should return null when head or tail is null", () => {
-  //     const sll = new SinglyLinkedList();
+    expect(dll.shift()).toBeNull();
+  });
 
-  //     expect(sll.shift()).toBeNull();
-  //   });
+  test("Shift method - should return removed item when head or tail is a node", () => {
+    const dll = new DoublyLinkedList();
 
-  //   test("Shift method - should return removed item when head or tail is a node", () => {
-  //     const sll = new SinglyLinkedList();
+    const FIRST_CREATED_NODE_VALUE = 35;
+    const SECOND_CREATED_NODE_VALUE = 55;
 
-  //     const FIRST_CREATED_NODE_VALUE = 35;
-  //     const SECOND_CREATED_NODE_VALUE = 55;
+    dll.push(FIRST_CREATED_NODE_VALUE);
+    dll.push(SECOND_CREATED_NODE_VALUE);
 
-  //     sll.push(FIRST_CREATED_NODE_VALUE);
-  //     sll.push(SECOND_CREATED_NODE_VALUE);
+    expect(dll.shift()).toEqual(
+      new DoublyLinkedListNode(
+        FIRST_CREATED_NODE_VALUE,
+        new DoublyLinkedListNode(SECOND_CREATED_NODE_VALUE)
+      )
+    );
 
-  //     expect(sll.shift()).toEqual(
-  //       new SinglyLinkedListNode(
-  //         FIRST_CREATED_NODE_VALUE,
-  //         new SinglyLinkedListNode(SECOND_CREATED_NODE_VALUE)
-  //       )
-  //     );
+    expect(dll.length).toBe(1);
 
-  //     expect(sll.length).toBe(1);
-
-  //     expect(sll.shift()).toEqual(
-  //       new SinglyLinkedListNode(SECOND_CREATED_NODE_VALUE)
-  //     );
-  //   });
+    expect(dll.shift()).toEqual(
+      new DoublyLinkedListNode(SECOND_CREATED_NODE_VALUE)
+    );
+  });
 
   //   test("Unshift method - should add to head and tail when no one", () => {
   //     const sll = new SinglyLinkedList();

@@ -63,4 +63,27 @@ export class DoublyLinkedList<T> {
 
     return poppedTail;
   }
+
+  /**
+   * Remove element from start of list.
+   * @returns removed head
+   */
+
+  shift() {
+    if (!this.head) return null;
+
+    const shiftedHead = this.head;
+
+    if (this.length === 1) {
+      this.head = null;
+      this.tail = null;
+    } else {
+      this.head = shiftedHead.next;
+      this.head!.prev = null;
+    }
+
+    this.length--;
+
+    return shiftedHead;
+  }
 }
