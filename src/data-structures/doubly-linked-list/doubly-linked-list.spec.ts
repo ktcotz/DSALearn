@@ -165,34 +165,31 @@ describe("Doubly Linked List structure method tests", () => {
     );
   });
 
-  //   test("Get method - should return null when index is lower than 0 or higher | average than length of list.", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Get method - should return null when index is lower than 0 or higher | average than length of list.", () => {
+    const dll = new DoublyLinkedList();
 
-  //     expect(sll.get(-1)).toBeNull();
-  //     expect(sll.get(sll.length)).toBeNull();
-  //     expect(sll.get(sll.length + 1)).toBeNull();
-  //   });
+    expect(dll.get(-1)).toBeNull();
+    expect(dll.get(dll.length)).toBeNull();
+    expect(dll.get(dll.length + 1)).toBeNull();
+  });
 
-  //   test("Get method - should return correctly item when index is in range", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Get method - should return correctly item when index is in range", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const FIRST_CREATED_NODE_VALUE = 35;
-  //     const SECOND_CREATED_NODE_VALUE = 55;
+    const FIRST_CREATED_NODE_VALUE = 35;
+    const SECOND_CREATED_NODE_VALUE = 55;
 
-  //     sll.push(FIRST_CREATED_NODE_VALUE);
+    dll.push(FIRST_CREATED_NODE_VALUE);
 
-  //     expect(sll.get(0)).toEqual(
-  //       new SinglyLinkedListNode(FIRST_CREATED_NODE_VALUE)
-  //     );
+    expect(dll.get(0)).toEqual(
+      new DoublyLinkedListNode(FIRST_CREATED_NODE_VALUE)
+    );
 
-  //     sll.push(SECOND_CREATED_NODE_VALUE);
+    dll.push(SECOND_CREATED_NODE_VALUE);
+    expect(dll.get(1)?.value).toEqual(SECOND_CREATED_NODE_VALUE);
 
-  //     expect(sll.get(1)).toEqual(
-  //       new SinglyLinkedListNode(SECOND_CREATED_NODE_VALUE)
-  //     );
-
-  //     expect(sll.get(2)).toBeNull();
-  //   });
+    expect(dll.get(2)).toBeNull();
+  });
 
   //   test("Set method - return null when node is not valid", () => {
   //     const sll = new SinglyLinkedList();

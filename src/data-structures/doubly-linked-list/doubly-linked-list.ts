@@ -110,4 +110,34 @@ export class DoublyLinkedList<T> {
 
     return this;
   }
+
+  get(index: number) {
+    if (index < 0 || index >= this.length) return null;
+
+    const isHigherThanHalf = index > this.length / 2;
+
+    if (isHigherThanHalf) {
+      let counter = this.length - 1;
+      let currentNode = this.tail;
+
+      while (counter !== index) {
+        if (currentNode?.prev) {
+          currentNode = currentNode.prev;
+        }
+        counter--;
+      }
+
+      return currentNode;
+    } else {
+      let counter = 0;
+      let currentNode = this.head;
+
+      while (counter !== index) {
+        currentNode = currentNode!.next;
+        counter++;
+      }
+
+      return currentNode;
+    }
+  }
 }
