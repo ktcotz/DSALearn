@@ -191,84 +191,84 @@ describe("Doubly Linked List structure method tests", () => {
     expect(dll.get(2)).toBeNull();
   });
 
-    test("Set method - return null when node is not valid", () => {
-      const dll = new DoublyLinkedList();
+  test("Set method - return null when node is not valid", () => {
+    const dll = new DoublyLinkedList();
 
-      const VALUE_TO_SET = 50;
+    const VALUE_TO_SET = 50;
 
-      expect(dll.set(VALUE_TO_SET, 0)).toBeNull();
-    });
+    expect(dll.set(VALUE_TO_SET, 0)).toBeNull();
+  });
 
-    test("Set method - return changed node when all is correctly", () => {
-      const dll = new DoublyLinkedList();
+  test("Set method - return changed node when all is correctly", () => {
+    const dll = new DoublyLinkedList();
 
-      const FIRST_CREATED_NODE_VALUE = 35;
+    const FIRST_CREATED_NODE_VALUE = 35;
 
-      dll.push(FIRST_CREATED_NODE_VALUE);
+    dll.push(FIRST_CREATED_NODE_VALUE);
 
-      const VALUE_TO_SET = 50;
+    const VALUE_TO_SET = 50;
 
-      expect(dll.set(VALUE_TO_SET, 0)).toEqual(
-        new DoublyLinkedListNode(VALUE_TO_SET)
-      );
-    });
+    expect(dll.set(VALUE_TO_SET, 0)).toEqual(
+      new DoublyLinkedListNode(VALUE_TO_SET)
+    );
+  });
 
-  //   test("Insert method - return null when index is lower than 0 or higher than list", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Insert method - return null when index is lower than 0 or higher than list", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const NODE_VALUE_TO_INSERT = 35;
+    const NODE_VALUE_TO_INSERT = 35;
 
-  //     expect(sll.insert(NODE_VALUE_TO_INSERT, -1)).toBeNull();
-  //     expect(sll.insert(NODE_VALUE_TO_INSERT, 1)).toBeNull();
-  //   });
+    expect(dll.insert(NODE_VALUE_TO_INSERT, -1)).toBeNull();
+    expect(dll.insert(NODE_VALUE_TO_INSERT, 1)).toBeNull();
+  });
 
-  //   test("Insert method - add to head and tail when index is 0", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Insert method - add to head and tail when index is 0", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const NODE_VALUE_TO_INSERT = 35;
+    const NODE_VALUE_TO_INSERT = 35;
 
-  //     sll.insert(NODE_VALUE_TO_INSERT, 0);
+    dll.insert(NODE_VALUE_TO_INSERT, 0);
 
-  //     expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
-  //     expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
-  //   });
+    expect(dll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+  });
 
-  //   test("Insert method - add to  tail when index is equal length of list", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Insert method - add to  tail when index is equal length of list", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const NODE_VALUE_TO_INSERT = 35;
-  //     const LAST_NODE_VALUE_TO_INSERT = 100;
+    const NODE_VALUE_TO_INSERT = 35;
+    const LAST_NODE_VALUE_TO_INSERT = 100;
 
-  //     sll.insert(NODE_VALUE_TO_INSERT, 0);
+    dll.insert(NODE_VALUE_TO_INSERT, 0);
 
-  //     expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
-  //     expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
 
-  //     sll.insert(LAST_NODE_VALUE_TO_INSERT, sll.length);
+    dll.insert(LAST_NODE_VALUE_TO_INSERT, dll.length);
 
-  //     expect(sll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
-  //   });
+    expect(dll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
+  });
 
-  //   test("Insert method - add correctly on correct index", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Insert method - add correctly on correct index", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const NODE_VALUE_TO_INSERT = 35;
-  //     const LAST_NODE_VALUE_TO_INSERT = 100;
-  //     const MIDDLE_NODE_VALUE_TO_INSERT = 55;
+    const NODE_VALUE_TO_INSERT = 35;
+    const LAST_NODE_VALUE_TO_INSERT = 100;
+    const MIDDLE_NODE_VALUE_TO_INSERT = 55;
 
-  //     sll.insert(NODE_VALUE_TO_INSERT, 0);
+    dll.insert(NODE_VALUE_TO_INSERT, 0);
 
-  //     expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
-  //     expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
 
-  //     sll.insert(LAST_NODE_VALUE_TO_INSERT, sll.length);
+    dll.insert(LAST_NODE_VALUE_TO_INSERT, dll.length);
 
-  //     expect(sll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
 
-  //     sll.insert(MIDDLE_NODE_VALUE_TO_INSERT, 1);
+    dll.insert(MIDDLE_NODE_VALUE_TO_INSERT, 1);
 
-  //     expect(sll.get(1)?.value).toBe(MIDDLE_NODE_VALUE_TO_INSERT);
-  //   });
+    expect(dll.get(1)?.value).toBe(MIDDLE_NODE_VALUE_TO_INSERT);
+  });
 
   //   test("Remove method - return null when index is lower than 0 or higher than list", () => {
   //     const sll = new SinglyLinkedList();
