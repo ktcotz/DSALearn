@@ -270,71 +270,64 @@ describe("Doubly Linked List structure method tests", () => {
     expect(dll.get(1)?.value).toBe(MIDDLE_NODE_VALUE_TO_INSERT);
   });
 
-  //   test("Remove method - return null when index is lower than 0 or higher than list", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Remove method - return null when index is lower than 0 or higher than list", () => {
+    const dll = new DoublyLinkedList();
 
-  //     expect(sll.remove(-1)).toBeNull();
-  //     expect(sll.remove(sll.length + 1)).toBeNull();
-  //   });
+    expect(dll.remove(-1)).toBeNull();
+    expect(dll.remove(dll.length + 1)).toBeNull();
+  });
 
-  //   test("Remove method - remove head and tail when index is 0 and only one item.", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Remove method - remove head and tail when index is 0 and only one item.", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const NODE_VALUE_TO_INSERT = 35;
+    const NODE_VALUE_TO_INSERT = 35;
 
-  //     sll.insert(NODE_VALUE_TO_INSERT, 0);
+    dll.insert(NODE_VALUE_TO_INSERT, 0);
 
-  //     expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
-  //     expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
 
-  //     sll.remove(0);
+    dll.remove(0);
 
-  //     expect(sll.head).toBeNull();
-  //     expect(sll.tail).toBeNull();
-  //     expect(sll.length).toBe(0);
-  //   });
+    expect(dll.head).toBeNull();
+    expect(dll.tail).toBeNull();
+    expect(dll.length).toBe(0);
+  });
 
-  //   test("Remove method - remove tail when index is equal length of list", () => {
-  //     const sll = new SinglyLinkedList();
+  test("Remove method - remove tail when index is equal length of list", () => {
+    const dll = new DoublyLinkedList();
 
-  //     const NODE_VALUE_TO_INSERT = 35;
-  //     const LAST_NODE_VALUE_TO_INSERT = 100;
+    const NODE_VALUE_TO_INSERT = 35;
+    const LAST_NODE_VALUE_TO_INSERT = 100;
 
-  //     sll.insert(NODE_VALUE_TO_INSERT, 0);
+    dll.insert(NODE_VALUE_TO_INSERT, 0);
 
-  //     expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
-  //     expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
 
-  //     sll.insert(LAST_NODE_VALUE_TO_INSERT, sll.length);
+    dll.insert(LAST_NODE_VALUE_TO_INSERT, dll.length);
 
-  //     expect(sll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
+  });
 
-  //     sll.remove(sll.length);
+  test("Insert method - add correctly on correct index", () => {
+    const dll = new DoublyLinkedList();
 
-  //     expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
-  //     expect(sll.length).toBe(1);
-  //   });
+    const NODE_VALUE_TO_INSERT = 35;
+    const LAST_NODE_VALUE_TO_INSERT = 100;
+    const MIDDLE_NODE_VALUE_TO_INSERT = 55;
 
-  //   test("Insert method - add correctly on correct index", () => {
-  //     const sll = new SinglyLinkedList();
+    dll.insert(NODE_VALUE_TO_INSERT, 0);
 
-  //     const NODE_VALUE_TO_INSERT = 35;
-  //     const LAST_NODE_VALUE_TO_INSERT = 100;
-  //     const MIDDLE_NODE_VALUE_TO_INSERT = 55;
+    expect(dll.head?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
 
-  //     sll.insert(NODE_VALUE_TO_INSERT, 0);
+    dll.insert(LAST_NODE_VALUE_TO_INSERT, dll.length);
 
-  //     expect(sll.head?.value).toBe(NODE_VALUE_TO_INSERT);
-  //     expect(sll.tail?.value).toBe(NODE_VALUE_TO_INSERT);
+    expect(dll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
 
-  //     sll.insert(LAST_NODE_VALUE_TO_INSERT, sll.length);
+    dll.insert(MIDDLE_NODE_VALUE_TO_INSERT, 1);
 
-  //     expect(sll.tail?.value).toBe(LAST_NODE_VALUE_TO_INSERT);
-
-  //     sll.insert(MIDDLE_NODE_VALUE_TO_INSERT, 1);
-
-  //     expect(sll.get(1)?.value).toBe(MIDDLE_NODE_VALUE_TO_INSERT);
-
-  //     expect(sll.remove(1)?.value).toBe(MIDDLE_NODE_VALUE_TO_INSERT);
-  //   });
+    expect(dll.get(1)?.value).toBe(MIDDLE_NODE_VALUE_TO_INSERT);
+  });
 });

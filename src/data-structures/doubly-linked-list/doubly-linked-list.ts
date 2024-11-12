@@ -175,4 +175,25 @@ export class DoublyLinkedList<T> {
 
     return true;
   }
+
+  remove(index: number) {
+    if (index < 0 || index >= this.length) return null;
+
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    const removedNode = this.get(index);
+
+    if (!removedNode) return null;
+
+    const previousNode = removedNode.prev;
+    const nextNode = removedNode.next;
+
+    previousNode!.next = nextNode;
+    nextNode!.prev = previousNode;
+
+    this.length--;
+
+    return removedNode;
+  }
 }
