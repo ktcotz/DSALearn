@@ -18,6 +18,7 @@ Omówione data structures w projekcie :
 
 - [x] Singly Linked List
 - [x] Doubly Linked List
+- [ ] Stacks
 
 ## Singly Linked List
 
@@ -30,3 +31,15 @@ Jak dostać się do kolejnego elementu w liście? Poprzez odwoływanie się do p
 ## Doubly Linked List
 
 Czym jest Doubly Linked List - jest to bardzo podobna struktura danych do single linked list, z różnicą dzięki której mamy możliwość odwołania się do poprzedniego node'a.
+
+## Stacks
+
+Czym jest Stack - jest to struktura danych która działa jak stos.
+
+Stack działa na zasadzie LIFO (Last In First Out).
+
+Stack posiada 3 metody :
+
+- push
+- pop
+- peek
