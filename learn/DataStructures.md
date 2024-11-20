@@ -43,3 +43,11 @@ Stack posiada 3 metody :
 - push
 - pop
 - peek
+
+## Queue
+
+Czym jest Queue - jest to struktura danych która działa jak kolejka.
+
+Queue działa na zasadzie FIFO (First in First Out).
+
+Jest bardzo podobna w działaniu do stack, ale jak nazwa mówi FIFO nie LIFO.
