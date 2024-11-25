@@ -51,3 +51,18 @@ Czym jest Queue - jest to struktura danych która działa jak kolejka.
 Queue działa na zasadzie FIFO (First in First Out).
 
 Jest bardzo podobna w działaniu do stack, ale jak nazwa mówi FIFO nie LIFO.
+
+## Binary Search Tree
+
+Czym jest BST - jest to struktura danych która składa się z kolejnych po sobie nodeów.
+BST charakteryzuje się tym, że każdy node, ma swoje maksymalnie 2 odnogi.
+
+Generalnie struktura Tree odpowiada strukturze drzewa i gałęzi (super analogia..)
+
+Czy wszystko jest drzewem? Drzewem jest tylko to co ma jeden wierzchołek (Root).
+
+Zasady poprawnego drzewa BST:
+
+1. Każdy rodzic może mieć maksymalnie 2 dzieci.
+2. Każdy node z lewej strony rodzica musi być mniejsza od rodzica.
+3. Każdy node z prawej strony rodzica musi być większy od rodzica.
