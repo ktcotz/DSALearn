@@ -1,5 +1,5 @@
 import { BinarySearchTree } from "./data-structures/binary-search-tree/binary-search-tree";
-import { twoSum } from "./leetcode-problems/two-sum/two-sum";
+import { isPalindrome } from "./leetcode-problems/palindrome-number/palindrome-number";
 
 const bst = new BinarySearchTree();
 
@@ -13,6 +13,7 @@ bst.insert(16);
 
 console.log(bst);
 
-twoSum([2, 7, 11, 15], 9);
-twoSum([3, 2, 4], 6);
-twoSum([3, 3], 6);
+isPalindrome(121);
+isPalindrome(-121);
+isPalindrome(10);
+isPalindrome(11);
