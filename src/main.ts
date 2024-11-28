@@ -1,5 +1,6 @@
 import { BinarySearchTree } from "./data-structures/binary-search-tree/binary-search-tree";
 import { isPalindrome } from "./leetcode-problems/palindrome-number/palindrome-number";
+import { romanToInt } from "./leetcode-problems/roman-to-integer/roman-to-integer";
 
 const bst = new BinarySearchTree();
 
@@ -12,8 +13,3 @@ bst.insert(11);
 bst.insert(16);
 
 console.log(bst);
-
-isPalindrome(121);
-isPalindrome(-121);
-isPalindrome(10);
-isPalindrome(11);
