@@ -39,4 +39,34 @@ export class BinarySearchTree<T> {
       }
     }
   }
+
+  get(value: T) {
+    if (!this.root) return null;
+
+    let current = this.root;
+
+    if (current === value) return current;
+
+    while (true) {
+      if (value === current.value) {
+        return value;
+      }
+
+      if (value > current.value) {
+        if (current.right) {
+          current = current.right;
+        } else {
+          return null;
+        }
+      }
+
+      if (value < current.value) {
+        if (current.left) {
+          current = current.left;
+        } else {
+          return null;
+        }
+      }
+    }
+  }
 }
