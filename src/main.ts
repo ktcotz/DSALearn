@@ -1,6 +1,5 @@
 import { BinarySearchTree } from "./data-structures/binary-search-tree/binary-search-tree";
-import { isPalindrome } from "./leetcode-problems/palindrome-number/palindrome-number";
-import { romanToInt } from "./leetcode-problems/roman-to-integer/roman-to-integer";
+import { longestCommonPrefix } from "./leetcode-problems/longest-common-prefix/longest-common-prefix";
 
 const bst = new BinarySearchTree();
 
@@ -13,3 +12,6 @@ bst.insert(11);
 bst.insert(16);
 
 console.log(bst);
+
+longestCommonPrefix(["flower", "flow", "flight"]);
+longestCommonPrefix(["dog", "racecar", "car"]);
