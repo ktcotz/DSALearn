@@ -66,3 +66,9 @@ Zasady poprawnego drzewa BST:
 1. Każdy rodzic może mieć maksymalnie 2 dzieci.
 2. Każdy node z lewej strony rodzica musi być mniejsza od rodzica.
 3. Każdy node z prawej strony rodzica musi być większy od rodzica.
+
+
+Tree Traversal - mamy dwa rodzaje BFS & DFS.
+
+BFS - przeszukuje liniowo
+DFS - przeszukuje wgłąb.
