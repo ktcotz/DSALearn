@@ -18,7 +18,10 @@ Omówione data structures w projekcie :
 
 - [x] Singly Linked List
 - [x] Doubly Linked List
-- [ ] Stacks
+- [x] Stacks
+- [x] Queues
+- [x] Trees
+- [] Heaps
 
 ## Singly Linked List
 
@@ -67,8 +70,15 @@ Zasady poprawnego drzewa BST:
 2. Każdy node z lewej strony rodzica musi być mniejsza od rodzica.
 3. Każdy node z prawej strony rodzica musi być większy od rodzica.
 
-
 Tree Traversal - mamy dwa rodzaje BFS & DFS.
 
 BFS - przeszukuje liniowo
 DFS - przeszukuje wgłąb.
+
+## Heaps
+
+Czym są Heaps - jest to struktura bardzo podobna do BST, ale z różnicami.
+
+Max Binary Heap - każdy ojciec nodó'w musi być większy niż dzieci.
+
+Min Binary Heap - każdy ojciec musi być mniejszy niż dzieci.
