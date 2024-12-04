@@ -1,5 +1,5 @@
 import { BinarySearchTree } from "./data-structures/binary-search-tree/binary-search-tree";
-import { removeElement } from "./leetcode-problems/remove-element/remove-element";
+import { strStr } from "./leetcode-problems/find-index-in-the-occurencies-string/find-index-in-the-occurencies-string";
 
 const bst = new BinarySearchTree();
 
@@ -10,5 +10,5 @@ bst.insert(8);
 bst.insert(15);
 bst.insert(20);
 
-removeElement([3, 2, 2, 3], 3);
-removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2);
+strStr("sadbutsad", "sad");
+strStr("leetcode", "leeto");
