@@ -82,3 +82,5 @@ Czym są Heaps - jest to struktura bardzo podobna do BST, ale z różnicami.
 Max Binary Heap - każdy ojciec nodó'w musi być większy niż dzieci.
 
 Min Binary Heap - każdy ojciec musi być mniejszy niż dzieci.
+
+Heaps zazwyczaj trzymamy w oparciu o tablicę. Każdy indeks rodzica jest uwzględniony jako (n-1)/2.
