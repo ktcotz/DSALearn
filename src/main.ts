@@ -1,5 +1,6 @@
 import { BinarySearchTree } from "./data-structures/binary-search-tree/binary-search-tree";
 import { lengthOfLastWord } from "./leetcode-problems/length-of-last-word/length-of-last-word";
+import "./codewars/regex-validate-pin-code";
 
 const bst = new BinarySearchTree();
 
