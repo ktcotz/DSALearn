@@ -1,4 +1,7 @@
+import { toCamelCase } from "./codewars/convert-camel-case";
 import { MaxBinaryHeap } from "./data-structures/max-binary-heap/max-binary-heap";
+
+toCamelCase("the_stealth_warrior");
 
 const heap = new MaxBinaryHeap();
 
