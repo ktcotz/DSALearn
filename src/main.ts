@@ -9,5 +9,5 @@ heap.insert(55);
 
 console.log(heap);
 
-climbStairs(2);
+// climbStairs(2);
 climbStairs(3);
