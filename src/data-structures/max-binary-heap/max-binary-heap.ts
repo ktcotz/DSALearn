@@ -1,83 +1,3 @@
-// export class MaxBinaryHeap<T extends number> {
-//   values: number[] = [41, 39, 33, 18, 27, 12];
-
-//   insert(value: T) {
-//     this.values.push(value);
-
-//     this.bubbleUp();
-//   }
-
-//   bubbleUp() {
-//     let lastIndex = this.values.length - 1;
-//     const element = this.values[lastIndex];
-
-//     while (lastIndex > 0) {
-//       let parentIndex = Math.floor((lastIndex - 1) / 2);
-
-//       let parentElement = this.values[parentIndex];
-
-//       if (element <= parentElement) break;
-
-//       this.values[parentIndex] = element;
-//       this.values[lastIndex] = parentElement;
-//       lastIndex = parentIndex;
-//     }
-//   }
-
-//   extractMax() {
-//     const max = this.values[0];
-//     const end = this.values.pop();
-
-//     if (this.values.length > 0) {
-//       if (end) {
-//         this.values[0] = end;
-//       }
-
-//       this.sinkDown();
-//     }
-
-//     return max;
-//   }
-
-//   sinkDown() {
-//     const length = this.values.length;
-//     const element = this.values[0];
-//     let idx = 0;
-
-//     while (true) {
-//       let leftChildIdx = 2 * idx + 1;
-//       let rightChildIdx = 2 * idx + 2;
-//       let leftChild, rightChild;
-//       let swap = null;
-
-//       if (leftChildIdx < length) {
-//         leftChild = this.values[leftChildIdx];
-//         if (leftChild > element) {
-//           swap = leftChildIdx;
-//         }
-//       }
-
-//       if (rightChildIdx < length) {
-//         rightChild = this.values[rightChildIdx];
-//         if (
-//           (swap === null && rightChild > element) ||
-//           (swap !== null && leftChild && rightChild > leftChild)
-//         ) {
-//           swap = rightChildIdx;
-//         }
-//       }
-
-//       if (swap === null) break;
-
-//       this.values[idx] = this.values[swap];
-//       this.values[swap] = element;
-//       idx = swap;
-//     }
-
-//     return element;
-//   }
-// }
-
 export class MaxBinaryHeap {
   values: number[] = [39, 41, 18, 27, 12, 33];
 
@@ -88,18 +8,69 @@ export class MaxBinaryHeap {
   }
 
   bubbleUp() {
-    let index = this.values.length - 1;
-    const element = this.values[index];
+    let lastIndex = this.values.length - 1;
 
-    while (index > 0) {
-      let parentIndex = Math.floor((index - 1) / 2);
-      const parentElement = this.values[parentIndex];
+    const element = this.values[lastIndex];
 
-      if (element < parentElement) break;
+    while (lastIndex > 0) {
+      let parentElementIdx = Math.floor((lastIndex - 1) / 2);
+      const parentElement = this.values[parentElementIdx];
 
-      this.values[index] = parentElement;
-      this.values[parentIndex] = element;
-      index = parentIndex;
+      if (parentElement < element) {
+        this.values[parentElementIdx] = element;
+        this.values[lastIndex] = parentElement;
+      }
+
+      lastIndex = parentElementIdx;
+    }
+  }
+
+  extractMax() {
+    let lastIndex = this.values.length - 1;
+    const lastElement = this.values[lastIndex];
+    const removed = this.values[0];
+
+    this.values[0] = lastElement;
+    this.values[lastIndex] = removed;
+    this.values.pop();
+
+    this.sinkDown();
+
+    return removed;
+  }
+
+  sinkDown() {
+    let currentIndex = 0;
+    const current = this.values[currentIndex];
+
+    while (true) {
+      let rightChildIdx = currentIndex * 2 + 2;
+      let leftChildIdx = currentIndex * 2 + 1;
+      let leftChild, rightChild;
+      let swap = null;
+
+      if (leftChildIdx < this.values.length) {
+        leftChild = this.values[leftChildIdx];
+        if (leftChild > current) {
+          swap = leftChildIdx;
+        }
+      }
+
+      if (rightChildIdx < this.values.length) {
+        rightChild = this.values[rightChildIdx];
+        if (
+          (swap === null && rightChild > current) ||
+          (swap !== null && leftChild && rightChild > leftChild)
+        ) {
+          swap = rightChildIdx;
+        }
+      }
+
+      if (swap === null) break;
+
+      this.values[currentIndex] = this.values[swap];
+      this.values[swap] = current;
+      currentIndex = swap;
     }
   }
 }
