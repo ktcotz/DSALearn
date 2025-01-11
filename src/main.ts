@@ -1,4 +1,6 @@
-import { tribonacci } from "./codewars/tribonacci-sequence";
+import { PriorityQueue } from "./data-structures/priority-queue/priority-queue";
+import "./data-structures/dynamic-programming/dynamic-programming";
 
-tribonacci([1, 1, 1], 10);
-tribonacci([0, 0, 1], 10);
+const pq = new PriorityQueue();
+
+console.log(pq);
