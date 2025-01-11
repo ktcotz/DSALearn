@@ -1,8 +1,5 @@
-import { wordSubsets } from "./leetcode-problems/word-subsets/word-subsets";
+import { canConstruct } from "./leetcode-problems/construct-k-palindrome-strings/construct-k-palindrome-strings";
 
-wordSubsets(["amazon", "apple", "facebook", "google", "leetcode"], ["e", "o"]);
-wordSubsets(
-  ["amazon", "apple", "facebook", "google", "leetcode"],
-  ["lo", "eo"]
-);
-wordSubsets(["amazon", "apple", "facebook", "google", "leetcode"], ["e", "oo"]);
+canConstruct("annabelle", 2);
+canConstruct("leetcode", 3);
+canConstruct("true", 4);
