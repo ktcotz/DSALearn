@@ -1,5 +1,4 @@
-import { canConstruct } from "./leetcode-problems/construct-k-palindrome-strings/construct-k-palindrome-strings";
+import { tribonacci } from "./codewars/tribonacci-sequence";
 
-canConstruct("annabelle", 2);
-canConstruct("leetcode", 3);
-canConstruct("true", 4);
+tribonacci([1, 1, 1], 10);
+tribonacci([0, 0, 1], 10);
