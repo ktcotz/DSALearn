@@ -21,7 +21,9 @@ Omówione data structures w projekcie :
 - [x] Stacks
 - [x] Queues
 - [x] Trees
-- [] Heaps
+- [x] Heaps
+- [x] Binary Min/Max Heap.
+- [x] Graphs
 
 ## Singly Linked List
 
